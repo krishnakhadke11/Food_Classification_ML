@@ -174,7 +174,10 @@ $(document).ready(function () {
     $('#btn-predict').click(function () {
         var form_data = new FormData($('#upload-file')[0]);
         document.querySelector("#card").removeAttribute("hidden");
-        
+        totalCalorie = 0;
+        // document.querySelector("#imageUpload").addEventListener('click', ()=>{
+        //     document.querySelector("#card").setAttribute("hidden");
+        // });
         // Show loading animation
         $(this).hide();
         $('.loader').show();
@@ -208,6 +211,9 @@ $(document).ready(function () {
                 // adding calories
                 b1Add.addEventListener('click', ()=>{
                     totalCalorie += calorie_count[data].extra[0]
+                    console.log(totalCalorie);
+                    console.log(calorie_count[data].extra[0])
+                    console.log(calorie_count[data].extra[0]);
                     calories.innerText = totalCalorie
                 });
                 b1Rm.addEventListener('click', ()=>{
@@ -225,7 +231,7 @@ $(document).ready(function () {
                     calories.innerText = totalCalorie
                 });
                 calories.innerText=0
-                totalCalorie+=calorie_count[data].base;
+                totalCalorie=calorie_count[data].base;
                 calories.innerText = totalCalorie;
                 document.querySelector("#button1").innerText=`${calorie_count[data].button1} - ${calorie_count[data].extra[0]} cal: `
                 document.querySelector("#button2").innerText=`${calorie_count[data].button2} - ${calorie_count[data].extra[1]} cal: `
@@ -233,7 +239,8 @@ $(document).ready(function () {
                 res.innerText=` Result: ${data}`
 
         },
-        });
+        
+    });
 });
 
 });
