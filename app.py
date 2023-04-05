@@ -47,64 +47,64 @@ def model_predict(img_path , model):
     preds = model.predict(img)
     preds = np.argmax(preds , axis = 1)
     if preds == 0:
-        preds = "This Item is Burger"
+        preds = "Burger"
 
     elif preds == 1:
-        preds = "This Item is Butter Naan"
+        preds = "Butter Naan"
 
     elif preds == 2:
-        preds = "This Item is Chai"
+        preds = "Chai"
 
     elif preds == 3:
-        preds = "This Item is Chapati"
+        preds = "Chapati"
 
     elif preds == 4:
-        preds = "This Item is Chole Bhature"
+        preds = "Chole Bhature"
 
     elif preds == 5:
-        preds = "This Item is Dal Makhani"
+        preds = "Dal Makhani"
 
     elif preds == 6:
-        preds = "This Item is Dhokla"
+        preds = "Dhokla"
 
     elif preds == 7:
-        preds = "This Item is Fried Rice"
+        preds = "Fried Rice"
 
     elif preds == 8:
-        preds = "This Item is Idli"
+        preds = "Idli"
 
     elif preds == 9:
-        preds = "This Item is Jalebi"
+        preds = "Jalebi"
 
     elif preds == 10:
-        preds = "This Item is Kaathi Rolls"
+        preds = "Kaathi Rolls"
     
     elif preds == 11:
-        preds = "This Item is Kadai Paneer"
+        preds = "Kadai Paneer"
 
     elif preds == 12:
-        preds = "This Item is Kulfi"
+        preds = "Kulfi"
 
     elif preds == 13:
-        preds = "This Item is Masala Dosa"
+        preds = "Masala Dosa"
 
     elif preds == 14:
-        preds = "This Item is Momos"
+        preds = "Momos"
 
     elif preds == 15:
-        preds = "This Item is Paani Puri"
+        preds = "Paani Puri"
 
     elif preds == 16:
-        preds = "This Item is Pakode"
+        preds = "Pakode"
 
     elif preds == 17:
-        preds = "This Item is Pav Bhaji"
+        preds = "Pav Bhaji"
 
     elif preds == 18:
-        preds = "This Item is Pizza"
+        preds = "Pizza"
 
     else:
-        preds = "This Item is Samosa"
+        preds = "Samosa"
 
     return preds
 
