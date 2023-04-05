@@ -1,51 +1,58 @@
 {% extends "base.html" %} {% block content %}
 
-<h2 style="text-align: center;">Indian Food Classification</h2>
+<h2 style="text-align: center">Indian Food Classification</h2>
+<div class="container-fluid col-12 text-center">
+    <div class="row align-items-center">
+        <form id="upload-file" class="col align-items-center " method="post" enctype="multipart/form-data">
+            <label for="imageUpload" class="upload-label"> Choose... </label>
+            <input class="btn-primary" type="file" name="file" id="imageUpload" accept=".png, .jpg, .jpeg ,.jfif" />
+        </form>
+    </div>
 
-<div class="container-fluid">
-    <div class="row">
-    <form id="upload-file" class="row" method="post" enctype="multipart/form-data">
-        <label for="imageUpload" class="upload-label">
-            Choose...
-        </label>
-        <input type="file" name="file" id="imageUpload" accept=".png, .jpg, .jpeg">
-    </form>
-</div>
-    <div class="row">
-    <div class="col align-middle ">
+    <div class="container-fluid align-items-center">
+        <div class="row">
+            <div class="col">
+                <div class="image-section col" style="display: none">
+                    <div class="img-preview row">
+                        <div id="imagePreview"></div>
+                    </div>
+                    <div class="row text-center">
+                        <button type="button" class="btn btn-primary btn-lg mx-4" id="btn-predict">
+                            Predict!
+                        </button>
+                    </div>
+                </div>
 
-        <div class="image-section row" style="display:none;">
-            <div class="img-preview row">
-                <div id="imagePreview">
+                <div class="loader row" style="display: none"></div>
+            </div>
+
+            <div class="col align-middle">
+                <h3 id="result" class="row my-4">
+                    <span></span>
+                </h3>
+
+                <div id="card" class="card row" style="width: fit-content" hidden>
+                    <div class="card-body">
+                        <h5 class="calorie">Calories:<span id="calories">0</span></h5>
+                         <hr>
+                        <label id="button1" for="">Item 1</label>
+                        <button type="button" id="button1Add" class="btn btn-primary">
+                            Add
+                        </button>
+                        <button type="button" id="button1Rm" class="btn btn-primary">
+                            Remove</button><hr>
+                        <label id="button2" for="">Item 1</label>
+                        <button type="button" id="button2Add" class="btn btn-primary">
+                            Add
+                        </button>
+                        <button type="button" id="button2Rm" class="btn btn-primary">
+                            Remove
+                        </button>
+                    </div>
                 </div>
             </div>
-            <div class="row">
-                <button type="button" class="btn btn-primary btn-lg mx-4 " id="btn-predict">Predict!</button>
-            </div>
-        </div>
-
-        <div class="loader row" style="display:none;"></div>
-    </div>
-
-    <div class="col align-middle">
-        <h3 id="result " class="row">
-            <span> </span>
-        </h3>
-
-        <div id="card" class="card row" style="width: fit-content; " hidden>
-            <div class="card-body">
-                <h5 class="calorie">Calories:<span id="calories">0</span></h5>
-                <label id="button1" for="">Item 1</label>
-                <button type="button" id="button1Add" class="btn btn-primary">Add</button>
-                <button type="button" id="button1Rm" class="btn btn-primary">Remove</button><br>
-                <label id="button2" for="">Item 1</label>
-                <button type="button" id="button2Add" class="btn btn-primary">Add</button>
-                <button type="button" id="button2Rm" class="btn btn-primary">Remove</button>
-            </div>
         </div>
     </div>
-</div>
-
 </div>
 
 {% endblock %}

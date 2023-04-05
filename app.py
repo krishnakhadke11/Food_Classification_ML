@@ -10,42 +10,44 @@ from keras_models.models import *
 # from keras_models.models import load_model
 from keras.preprocessing.image import ImageDataGenerator
 from keras_preprocessing.image import *
-# from keras_preprocessing.image import load_img
 from keras.utils import img_to_array
 from keras.preprocessing import *
-# from keras.preprocessing import image
 from flask import Flask , redirect , url_for , request , render_template
 from werkzeug.utils import secure_filename
 
-# Create a Flask App
 app = Flask(__name__)
 
 # load the model
-Model_path = (r"E:\Sem-6\MPR-Sem6\Dummy_proj\Indian-Food-Classification\Food.h5")
+Model_path = (r"C:\Users\ASUS\Documents\GitHub\Food_Classification_ML\FoodCNN.h5")
 model=keras.models.load_model(Model_path)
-# model = load_model(Model_path)
 
-
-# Create a function to take and image and predict the class
 def model_predict(img_path , model):
-    print("Hello World")
-    # image = image.load_img(img_path, target_size=(224, 224))  
-    # image = image.img_to_array(image)  
-    # image = np.expand_dims(image, axis=0)
-    # image /= 255
-    img = tf.keras.utils.load_img(img_path, target_size=(224, 224))  
-    img = tf.keras.utils.img_to_array(img)  
+    # img = tf.keras.utils.load_img(img_path, target_size=(224, 224))  
+    # img = tf.keras.utils.img_to_array(img)  
+    # img = np.expand_dims(img, axis=0)
+    # img /= 255.  
+    # preds = model.predict(img)
+    # preds = np.argmax(preds , axis = 1)
+    #------------------------------------------------
+    from keras.preprocessing.image import ImageDataGenerator
+    from keras_preprocessing.image import load_img
+    from tensorflow.keras.utils import img_to_array
+    from keras.preprocessing import image
+
+    img = load_img(img_path, target_size=(256, 256)) 
+    img = img_to_array(img)  
     img = np.expand_dims(img, axis=0)
-    img /= 255.  
+    batch_prediction= model.predict(img)
+    preds=np.argmax(batch_prediction[0])
 
-    # print(img_path)
-    # img = image.load_img(img_path , target_size=(299 , 299))
-    # x = image.img_to_array(img)
-    # x = x / 255 
-    # x = np.expand_dims(x , axis = 0)
-
-    preds = model.predict(img)
-    preds = np.argmax(preds , axis = 1)
+    #--------------------------------------------
+    # img =load_img(img_path, target_size=(256, 256))  
+    # img =img_to_array(img)  
+    # img = np.expand_dims(img, axis=0)
+    # img /= 255.  
+    # preds = model.predict(img)
+    # preds = np.argmax(preds , axis = 1)
+    print(preds)
     if preds == 0:
         preds = "Burger"
 

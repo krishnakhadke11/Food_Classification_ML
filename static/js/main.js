@@ -193,7 +193,9 @@ $(document).ready(function () {
                 $('.loader').hide();
                 $('#result').fadeIn(600);
                 // $('#card').fadeIn(600);
-                $('#result').text(' Result:  ' + data);
+                console.log(data)
+                // $('#result').text(' Result:  ' + data);
+                
             
                 calories=document.querySelector("#calories")
                 b1Add=document.querySelector("#button1Add")
@@ -227,7 +229,8 @@ $(document).ready(function () {
                 calories.innerText = totalCalorie;
                 document.querySelector("#button1").innerText=`${calorie_count[data].button1} - ${calorie_count[data].extra[0]} cal: `
                 document.querySelector("#button2").innerText=`${calorie_count[data].button2} - ${calorie_count[data].extra[1]} cal: `
-               
+                res=document.querySelector('#result')
+                res.innerText=` Result: ${data}`
 
         },
         });
