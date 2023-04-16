@@ -78,10 +78,10 @@ calorie_count={
     },
     //11
     "Kadai Paneer":{
-        base:99,
-        extra:[90,80],
+        base:180,
+        extra:[40,50],
         button1:"Extra Paneer",
-        button2:"Extra Ghe"
+        button2:"Extra Ghee"
     },
     //12
     "Kulfi":{
