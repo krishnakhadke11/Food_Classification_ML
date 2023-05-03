@@ -15,13 +15,12 @@ from keras.preprocessing import *
 from flask import Flask , redirect , url_for , request , render_template
 from werkzeug.utils import secure_filename
 
+from dotenv import load_dotenv
+load_dotenv()
+
 app = Flask(__name__)
 
-# load the model
-#Krishna
-# Model_path = (r"E:\Sem-6\MPR-Sem6\Project_files\Food_Classification_ML\FoodCNN.h5")
-#Harsh
-Model_path = (r"E:\Sem-6\MPR-Sem6\Project_files\Food_Classification_ML\FoodCNN.h5")
+Model_path = (os.environ.get('MODEL_PATH'))
 model=keras.models.load_model(Model_path)
 
 def model_predict(img_path , model):

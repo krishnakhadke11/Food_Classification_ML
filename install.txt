@@ -4,5 +4,6 @@ tensorflow
 keras-models
 Keras-Preprocessing
 flask
+python-dotenv
 
-pip install numpy pandas tensorflow keras-models Keras-Preprocessing flask
+pip install numpy pandas tensorflow keras-models Keras-Preprocessing flask python-dotenv
