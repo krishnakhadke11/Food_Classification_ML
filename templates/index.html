@@ -11,36 +11,40 @@
 
     <div class="container-fluid align-items-center">
         <div class="row">
-            <div class="col">
-                <div class="image-section col" style="display: none">
-                    <div class="img-preview row">
+            <div class="col justify-content-center">
+                <div class="image-section align-middle justify-content-center col" style="display: none">
+                    <div class="row img-preview">
                         <div id="imagePreview"></div>
                     </div>
                     <div class="row text-center">
-                        <button type="button" class="btn btn-primary btn-lg mx-4" id="btn-predict">
-                            Predict!
-                        </button>
+                        <div class="">
+                            <button type="button" class="btn btn-primary btn-lg mx-5" id="btn-predict">
+                                Predict!
+                            </button>
+                        </div>
                     </div>
                 </div>
 
                 <div class="loader row" style="display: none"></div>
             </div>
 
-            <div class="col align-middle">
+            <div class="col align-middle justify-content-center">
                 <h3 id="result" class="row my-4">
                     <span></span>
                 </h3>
+                <p id="desc" style="width: 100p;"></p>
 
-                <div id="card" class="card row" style="width: fit-content" hidden>
+                <div id="card" class="card row align-middle justify-content-center" style="width: fit-content" hidden>
                     <div class="card-body">
                         <h5 class="calorie">Calories:<span id="calories">0</span></h5>
-                         <hr>
+                        <hr>
                         <label id="button1" for="">Item 1</label>
                         <button type="button" id="button1Add" class="btn btn-primary">
                             Add
                         </button>
                         <button type="button" id="button1Rm" class="btn btn-primary">
-                            Remove</button><hr>
+                            Remove</button>
+                        <hr>
                         <label id="button2" for="">Item 1</label>
                         <button type="button" id="button2Add" class="btn btn-primary">
                             Add
