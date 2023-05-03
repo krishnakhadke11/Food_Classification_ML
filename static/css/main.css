@@ -3,11 +3,14 @@
     height: 256px;
     position: relative;
     border: 5px solid #F8F8F8;
-    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
-    margin-top: 1em;
+    box-shadow: 0px 5px 4px 5px rgba(0, 0, 0, 0.1);
+    margin-top: 2em;
     margin-bottom: 2em;  
-    left: 350px;
-    top:20px;
+    left: 56%;
+    top:7px;
+}
+.btn-predict{
+    margin-left:25%;
 }
 
 .img-preview>div {
@@ -36,7 +39,12 @@ input[type="file"] {
     background: #34495E;
     color: #39D2B4;
 }
-
+.result{
+    margin-left: 0%;
+}
+.desc{
+    text-align: left;
+}
 .loader {
     border: 8px solid #f3f3f3; /* Light grey */
     border-top: 8px solid #3498db; /* Blue */
