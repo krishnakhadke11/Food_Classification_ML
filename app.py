@@ -18,7 +18,7 @@ from werkzeug.utils import secure_filename
 app = Flask(__name__)
 
 # load the model
-Model_path = (r"C:\Users\ASUS\Documents\GitHub\Food_Classification_ML\FoodCNN.h5")
+Model_path = (r"E:\Sem-6\MPR-Sem6\Project_files\Food_Classification_ML\FoodCNN.h5")
 model=keras.models.load_model(Model_path)
 
 def model_predict(img_path , model):
